@@ -1,0 +1,41 @@
+
+<?php
+    // // include route to function file 
+    // include('../functions/contact_function.php');
+    
+  
+    // //call the function
+    //  display_all_contactfunc();
+    ?>
+
+<br>
+    <h1> List of Products</h1>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Price</th>
+            <th scope="col">Image</th>
+            <th scope="col">Add to Cart</th>      
+            </tr>
+        </thead>
+
+        <tbody>
+            <?php
+                $product= viewallprod_ctr();
+                foreach ((array) $product as $aproduct){
+                // foreach ($product as $aproduct){
+                    echo 
+                    "
+                    <tr>
+                        <td>{$aproduct['product_title']}</td>
+                        <td>{$aproduct['product_price']}</td>
+                        <td>{$aproduct['product_image']}</td>
+                        <td><a href=''>Add to Cart</a></td>
+                    </tr>";
+                }
+            ?>
+
+
+        </tbody>

@@ -25,17 +25,11 @@
 
 
 <body class="d-flex h-100 text-center text-white bg-dark">
-
-
-
-
-
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="mb-auto">
 
             <div>
                 <h3 class="float-md-start mb-0">Ecommerce Labs</h3>
-             
                 <?php
                     session_start();
                     if(isset($_SESSION['cid'])){
@@ -44,21 +38,6 @@
                 <?php
                     }
                 ?>
-                    <!-- Check if logged in user is admin with role =1 and seesion id initiated -->
-                <?php
-                    if(isset($_SESSION['cid']) && $_SESSION['role']=="1"){
-                        
-                ?>
-                <a class="btn btn-success" style="align-self: right;" href="admin/Brand.php">Brand</a>
-                <a class="btn btn-success" style="align-self: right;" href="admin/Category.php">Category</a>
-
-                <?php
-                    }
-                ?>
-
-
-
-
             </div>
             <!-- -->
         </header>
@@ -67,21 +46,62 @@
 
 
         <main class="px-3">
-            <!--
-        <h1>Cover your page.</h1> -->
-
             <?php
             if(!empty($_SESSION['name'])){
               
+                
                 echo $_SESSION['name']; 
             }
                 ?>
-            <p class="lead">Welcome to my labs.</p>
             <br>
-            <p class="lead">Click Register to access the register form</p>
+            <br>
+
+            <?php 
+            if(empty($_SESSION['cid'])){
+                ?>
+            <br>
+
             <a class="btn btn-success" style="text-align: center" href="login/registerform.php">Register</a>
             <a class="btn btn-success" style="text-align: center" href="login/loginform.php">Login </a>
+            <br>
+            <br>
 
+            <!-- <p class="lead">Buttons for access</p> -->
+
+
+
+
+            <?php
+            }
+            ?>
+
+            <!-- Check if logged in user is admin with role =1 and seesion id initiated -->
+            <?php
+             if(isset($_SESSION['cid']) && $_SESSION['role']=="1"){
+            ?>
+            <a class="btn btn-success" style="align-self: right;" href="admin/Brand.php">Brand</a>
+            <a class="btn btn-success" style="align-self: right;" href="admin/Category.php">Category</a>
+            <a class="btn btn-success" style="align-self: right;" href="admin/product.php">Product</a>
+
+
+           <?php
+             } 
+            ?>
+             <!-- Check if logged in user is admin with role =1 and seesion id initiated -->
+             <?php
+             if(isset($_SESSION['cid']) && $_SESSION['role']=="2"){
+            ?>
+               <p class="lead">Welcome to my labs.</p>
+            <a class="btn btn-success" style="text-align: center" href="view/all_product.php">View products</a>
+            <a class="btn btn-success" style="text-align: center" href="view/product_search_result.php">Search for products</a>
+            <a class="btn btn-success" style="text-align: center" href="view/single_product.php">view prod</a>
+
+
+            
+
+           <?php
+             } 
+            ?>
         </main>
 
         <footer class="mt-auto text-white-50">

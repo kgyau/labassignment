@@ -58,14 +58,29 @@ class Brandclass extends db_connection{
     function editcat_cls($catid,$newcatname){
         $sql ="UPDATE categories SET `cat_name` ='$newcatname' WHERE `cat_id` = '$catid'";
         return $this-> db_query($sql);
-
     }
 
-    // function addprodcategory_cls(){
-    //     $sql ="";
-    //     return $this-> db_query($sql);
 
-    // }
+    function addproduct_cls($prodcat,$prodtitle,$prodprice,$prodbrand,$proddesc,$prodimage,$prodkeywords){
+        $sql = "INSERT INTO `products` (`product_cat`,`product_title`,`product_price`,`product_brand`,`product_desc`,`product_image`,`product_keywords`) 
+        VALUES ('$prodcat','$prodtitle','$prodprice','$prodbrand','$proddesc','$prodimage','$prodkeywords')";
+        return $this->db_query($sql);
+    }
+
+    function viewallprod_cls(){
+        $sql= "SELECT * FROM products";
+        return $this-> db_query($sql);
+    }
+
+    function searchprod_cls(){
+        $sql= "";
+        return $this-> db_query($sql);
+    }
+
+    function viewoneprod_cls($prodid){
+        $sql= "SELECT * FROM products WHERE product_id='$prodid'";
+        return $this-> db_query($sql);
+    }
 
 
 }
