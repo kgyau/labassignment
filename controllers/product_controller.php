@@ -72,9 +72,9 @@ function viewoneprod_ctr($prodid){
     $viewoneprod = new Brandclass();
     return $viewoneprod->viewoneprod_cls($prodid);
 }
-function addproduct_ctr($prodcat,$prodtitle,$prodprice,$prodbrand,$proddesc,$prodimage,$prodkeywords){
+function addproduct_ctr($prodcat,$prodbrand,$prodtitle,$prodprice,$proddesc,$prodimage,$prodkeywords){
     $add_prod= new Brandclass();
-    return $add_prod->addproduct_cls($prodcat,$prodtitle,$prodprice,$prodbrand,$proddesc,$prodimage,$prodkeywords); 
+    return $add_prod->addproduct_cls($prodcat,$prodbrand,$prodtitle,$prodprice,$proddesc,$prodimage,$prodkeywords); 
 }
 
 

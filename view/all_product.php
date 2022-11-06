@@ -29,37 +29,48 @@ require('../controllers/product_controller.php');
 
 <body>
 
-
     <h4>All Products</h4>
-    <div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Title</th>
+                <th>Product Brand</th>
+                <th>Product Category</th>
+                <th>Product Price</th>
+                <th>Product Description</th>
+                <th>Product Keyword</th>
+                <th>Product image</th>
+            </tr>
+        </thead>
 
-        <?php
-            $product = viewallprod_ctr();
-            foreach ((array) $product as $aproduct) {
-                $product_id = $aproduct['product_id'];
-                $product_title = $aproduct['product_title'];
-                $product_price = $aproduct['product_price'];
-                $product_image = $aproduct['product_image'];
-                echo " 
-                <div class='card'>
-                <img src=' ../images/$product_image' style='width:100%'>
-                <br>
-                <br>
-                <div class='container'>
-                Name: $product_title 
-                <br>
-                <br>
-                Price:  GHS $product_price <br> <br> 
-                <a href='../actions/cart.php?pid=$product_id' class='btn btn-primary'>Add to Cart</a> <!-- When i add cart page  -->
-                <a href='single_product.php?vid=$product_id' class='btn btn-primary'>View</a>
-                </div>
-                </div>";
-            }
-        ?>
-    </div>
+        <tbody>
+            <?php
+                $product = viewallprod_ctr();
+                foreach ((array) $product as $aproduct) {
+                    
+                    $product_title = $aproduct['product_title'];
+                    $pcat = $aproduct['product_cat'];
+                    $pbrand = $aproduct['product_brand'];
+                    $pprice = $aproduct['product_price'];
+                    $pdesc = $aproduct['product_desc'];
+                    $pkey = $aproduct['product_keywords'];
+                    $product_image = $aproduct['product_image'];
+                    
+                    echo"
+                    <tr>
+                    <td>$product_title</td>
+                    <td>$pcat</td>
+                    <td>$pbrand</td>
+                    <td>$pprice</td>
+                    <td>$pdesc</td>
+                    <td>$pkey</td>
+                    <td>$product_image</td>
+                    ";
+                }
+                ?>
+        </tbody>
+    </table>
 
-
-    <!--  -->
 </body>
 
 </html>
