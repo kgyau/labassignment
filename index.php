@@ -83,6 +83,8 @@
             <a class="btn btn-success" style="align-self: right;" href="admin/Brand.php">Brand</a>
             <a class="btn btn-success" style="align-self: right;" href="admin/Category.php">Category</a>
             <a class="btn btn-success" style="align-self: right;" href="admin/product.php">Add Product</a>
+            <a class="btn btn-success" style="text-align: center" href="view/all_product.php">View products</a>
+            <a class="btn btn-success" style="text-align: center" href="view/product_search_result.php">Search for products</a>
 
 
            <?php
