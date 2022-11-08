@@ -71,15 +71,24 @@ class Brandclass extends db_connection{
         return $this-> db_fetch_all($sql);
     }
 
-    function searchprod_cls(){
-        $sql= "";
-        return $this-> db_query($sql);
+    function viewoneprod_cls($prodid){
+        $sql= "SELECT * FROM `products` WHERE product_id='$prodid'";
+        return $this-> db_fetch_one($sql);
     }
 
-    function viewoneprod_cls($prodid){
-        $sql= "SELECT * FROM products WHERE product_id='$prodid'";
-        return $this-> db_query($sql);
+    function searchprod_cls($search){
+        $sql = "SELECT * FROM `products` WHERE product_title like '%$search%'";
+        return $this->db_fetch_all($sql);
     }
+
+    function editprod_cls($prod_id,$productcat,$productbrand,$prod_title,$productprice,$prod_desc,$prod_key,$productimage)
+    {
+    $sql = "UPDATE `products` SET product_brand = '$productbrand', product_cat= '$productcat',product_title= '$prod_title', 
+    product_price= '$productprice',product_desc= '$prod_desc',product_keywords= '$prod_key',product_image= '$productimage'
+    WHERE product_id = '$prod_id'";
+    return $this->db_query($sql);
+    }
+
 
 
 }

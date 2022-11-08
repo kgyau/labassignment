@@ -1,5 +1,5 @@
 <?php
-require('../controllers/product_controller.php');
+include('../controllers/product_controller.php');
 ?>
 
 
@@ -14,12 +14,12 @@ require('../controllers/product_controller.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="../css/product.css" rel="stylesheet">
-
-
     <title>products</title>
 </head>
 
 <body>
+
+
 
     <br>
     <h1> Add products</h1>
@@ -102,6 +102,7 @@ require('../controllers/product_controller.php');
                         <div class="row justify-content-end">
                             <div class="form-group col-sm-6">
                                 <button type="submit" value="Add new product" name="submitprod" class="btn btn-primary">Add Product</button>
+                               <a href='../view/all_product.php' value="Add new product"class= "btn btn-primary">View products</a>
                             </div>
                         </div>
 

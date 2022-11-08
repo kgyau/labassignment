@@ -60,7 +60,7 @@
             if(empty($_SESSION['cid'])){
                 ?>
             <br>
-
+            <p class="lead">Welcome to my lab</p>
             <a class="btn btn-success" style="text-align: center" href="login/registerform.php">Register</a>
             <a class="btn btn-success" style="text-align: center" href="login/loginform.php">Login </a>
             <br>
@@ -79,9 +79,10 @@
             <?php
              if(isset($_SESSION['cid']) && $_SESSION['role']=="1"){
             ?>
+            <p class="lead">Welcome to my lab</p>
             <a class="btn btn-success" style="align-self: right;" href="admin/Brand.php">Brand</a>
             <a class="btn btn-success" style="align-self: right;" href="admin/Category.php">Category</a>
-            <a class="btn btn-success" style="align-self: right;" href="admin/product.php">Product</a>
+            <a class="btn btn-success" style="align-self: right;" href="admin/product.php">Add Product</a>
 
 
            <?php
@@ -91,10 +92,10 @@
              <?php
              if(isset($_SESSION['cid']) && $_SESSION['role']=="2"){
             ?>
-               <p class="lead">Welcome to my labs.</p>
+               <p class="lead">Welcome to my lab</p>
             <a class="btn btn-success" style="text-align: center" href="view/all_product.php">View products</a>
             <a class="btn btn-success" style="text-align: center" href="view/product_search_result.php">Search for products</a>
-            <a class="btn btn-success" style="text-align: center" href="view/single_product.php">view prod</a>
+            <!-- <a class="btn btn-success" style="text-align: center" href="view/single_product.php"></a> -->
 
 
             

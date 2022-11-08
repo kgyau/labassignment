@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
     if ($result) {
         header('location: ../login/loginform.php');
     } else {
-        echo 'error';
+        echo 'Registration Failed. Try again';
     }
 }
 

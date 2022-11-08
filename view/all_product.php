@@ -10,14 +10,7 @@ require('../controllers/product_controller.php');
 
     <meta name="Kwame Ofori-Gyau" content="WebTecher">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-
     <title>All products</title>
-
-    <!-- Removing the / brings the css -->
     <!-- Bootstrap core CSS -->
     <link href="../css/bootsrap.min.css" rel="stylesheet">
 
@@ -40,6 +33,8 @@ require('../controllers/product_controller.php');
                 <th>Product Description</th>
                 <th>Product Keyword</th>
                 <th>Product image</th>
+                <th>Add to cart</th>
+
             </tr>
         </thead>
 
@@ -65,7 +60,9 @@ require('../controllers/product_controller.php');
                     <td>$pdesc</td>
                     <td>$pkey</td>
                     <td>$product_image</td>
-                    ";
+                    <td><a href='' class= 'btn btn-primary' >Add to Cart</a></td>
+                    <td><a href='../view/single_product.php?product_id={$aproduct['product_id']}' class= 'btn btn-primary'>View</a></td>
+                    <td><a href='../view/update_product.php?product_id={$aproduct['product_id']}' class= 'btn btn-primary'>Update</a></td>";
                 }
                 ?>
         </tbody>

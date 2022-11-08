@@ -63,10 +63,7 @@ function viewallprod_ctr(){
     return $viewallprod->viewallprod_cls();
 }
 
-function searchprod_ctr(){
-    $searchprod = new Brandclass();
-    return $searchprod->searchprod_cls();
-}
+
 
 function viewoneprod_ctr($prodid){
     $viewoneprod = new Brandclass();
@@ -76,6 +73,18 @@ function addproduct_ctr($prodcat,$prodbrand,$prodtitle,$prodprice,$proddesc,$pro
     $add_prod= new Brandclass();
     return $add_prod->addproduct_cls($prodcat,$prodbrand,$prodtitle,$prodprice,$proddesc,$prodimage,$prodkeywords); 
 }
+
+function searchprod_ctr($search){
+    $searchprod = new Brandclass();
+    return $searchprod->searchprod_cls($search);
+}
+
+function editprod_ctr($prod_id,$productcat,$productbrand,$prod_title,$productprice,$prod_desc,$prod_key,$productimage){
+    $updateprod = new Brandclass();
+    return $updateprod->editprod_cls($prod_id,$productcat,$productbrand,$prod_title,$productprice,$prod_desc,$prod_key,$productimage);
+
+}
+
 
 
 // function editcat_ctr($catid,$newcatname){

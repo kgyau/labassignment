@@ -19,7 +19,6 @@ if(isset($_POST['lsubmit'])){
 
   if($check){
       // set session for id and user role 
-      echo $email, $password;
       
     if(password_verify($password,$pickedpassword)){
       // echo 'successful'
@@ -32,11 +31,9 @@ if(isset($_POST['lsubmit'])){
       // var_dump($_SESSION);
       header('location: ../index.php');
       
-      
-
     }
       else{
-        echo "Validation Failed";
+        echo "Login Failed. Please try again";
       }
             
     
