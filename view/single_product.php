@@ -2,8 +2,13 @@
 require('../controllers/product_controller.php');
 $product_id =$_GET['product_id'];
 $prod=viewoneprod_ctr($product_id);
+$brand = selectonebrand_ctr($prod['product_brand']);
+$cat = selectonecat_ctr($prod['product_cat']);
+
 
 ?>
+
+
 
 <!doctype html>
 <html lang="en" class="h-100">
@@ -32,7 +37,7 @@ $prod=viewoneprod_ctr($product_id);
                     src="../images/product/"> </a>
             <figcaption class="info-wrap">
                 <div class="row">
-                    <div class="col-md-9 col-xs-9"> Name: <?php echo $product_title  = $_GET['product_title']; ?></div>
+                    <div class="col-md-9 col-xs-9"> Name: <?php echo $prod['product_title'], $brand['brand_name']; ?></div>
                 </div>
             </figcaption>
             <div class="bottom-wrap-payment">

@@ -1,6 +1,7 @@
 <?php
 include('../controllers/product_controller.php');
-
+$prod_id = $_GET['product_id'];
+$product = viewoneprod_ctr($prod_id);
 ?>
 
 <!DOCTYPE html>
@@ -20,8 +21,6 @@ include('../controllers/product_controller.php');
 <body>
 
     <?php
-		$prod_id = $_GET['product_id'];
-		$product = viewoneprod_ctr($prod_id);
 		
 	?>
     <div class="container-fluid px-1 py-5 mx-auto">
@@ -30,8 +29,7 @@ include('../controllers/product_controller.php');
                 <form method="post" action="../actions/updateprod_process.php">
                     <div class="card">
                         <div class="form-group">
-                            <input type="hidden" value="<?php echo $product['product_id']?> " name="product_id"
-                                required>
+                            <input type="hidden" value="<?php echo $product['product_id']?> " name="product_id"required>
                             <label for=""> Choose Category</label>
                             <select name='category'>
                                 <option>category</option>

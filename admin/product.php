@@ -28,7 +28,7 @@ include('../controllers/product_controller.php');
     <div class="container-fluid px-1 py-5 mx-auto">
         <div class="row d-flex justify-content-center">
             <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-                <form action="../actions/add_product.php" method="POST">
+                <form action="../actions/add_product.php" method="POST" enctype="multipart/form-data" >
 
                     <div class="card">
                         <div class="form-group">
@@ -97,7 +97,7 @@ include('../controllers/product_controller.php');
 
                         <div class="form-group">
                             <label class="image" for="prodimage">Select Product Image:</label>
-                            <input type="file" class="form-control-file" name="prodimage">
+                            <input type="file" class="form-control-file" name="prodimage" id="prodimage">
                         </div>
                         <div class="row justify-content-end">
                             <div class="form-group col-sm-6">
