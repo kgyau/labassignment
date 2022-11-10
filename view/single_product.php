@@ -50,7 +50,7 @@ $cat = selectonecat_ctr($prod['product_cat']);
                     <div class="row">
                     <div class="col-md-9 col-xs-9"> Description: <?php echo $prod['product_desc']; ?> </div>
                 </figcaption>
-            <div class="bottom-wrap"> <a href="#" class="btn btn-primary float-right" > Add to cart </a>
+            <div class="bottom-wrap"> <a href="../actions/add_to_cart.php" class="btn btn-primary float-right" > Add to cart </a>
                 <div class="price-wrap"> <a href="#" class="btn btn-warning float-left" > Cancel </a>
                 </div>
             </div>

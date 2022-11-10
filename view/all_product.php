@@ -60,7 +60,7 @@ require('../controllers/product_controller.php');
                     <td>$pdesc</td>
                     <td>$pkey</td>
                     <td>$product_image</td>
-                    <td><a href='' class= 'btn btn-primary' >Add to Cart</a></td>
+                    <td><a href='../actions/add_to_cart.php?product_id={$aproduct['product_id']}' class='btn btn-primary'>Add to Cart</a></td>
                     <td><a href='../view/single_product.php?product_id={$aproduct['product_id']}' class= 'btn btn-primary'>View</a></td>
                     <td><a href='../view/update_product.php?product_id={$aproduct['product_id']}' class= 'btn btn-primary'>Update</a></td>";
                 }
