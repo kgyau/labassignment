@@ -33,22 +33,22 @@ $cat = selectonecat_ctr($prod['product_cat']);
 
 <body>
     <div class="container d-flex justify-content-center">
-        <figure class="card card-product-grid card-lg"> <a class="img-wrap" data-abc="true"> <img
-                    src="../images/product/"> </a>
+    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>">
+        <figure class="card card-product-grid card-lg"> <a class="img-wrap" data-abc="true"> <img src="../images/product/<?php echo $prod['product_image']; ?> "> </a>
             <figcaption class="info-wrap">
                 <div class="row">
-                    <div class="col-md-9 col-xs-9"> Name: <?php echo $prod['product_title'], $brand['brand_name']; ?></div>
+                    <div class="col-md-9 col-xs-9"> Name: <?php echo $prod['product_title']; ?></div>
                 </div>
             </figcaption>
             <div class="bottom-wrap-payment">
                 <figcaption class="info-wrap">
                     <div class="row">
-                    <div class="col-md-9 col-xs-9"> Price: <?php echo $product_price; ?> </div>
+                    <div class="col-md-9 col-xs-9"> Price: <?php echo $prod['product_price']; ?> </div>
                 </figcaption>
             </div>
             <figcaption class="info-wrap">
                     <div class="row">
-                    <div class="col-md-9 col-xs-9"> Description: <?php echo $product_desc; ?> </div>
+                    <div class="col-md-9 col-xs-9"> Description: <?php echo $prod['product_desc']; ?> </div>
                 </figcaption>
             <div class="bottom-wrap"> <a href="#" class="btn btn-primary float-right" > Add to cart </a>
                 <div class="price-wrap"> <a href="#" class="btn btn-warning float-left" > Cancel </a>
@@ -58,19 +58,6 @@ $cat = selectonecat_ctr($prod['product_cat']);
     </div>
 
     
-
-
-
-
-    <?php
- 
-
- $product_title=['product_title'];
- $product_price = ['product_price'];
- $product_image = ['product_image'];
- 
- print_r($prod);
-?>
     <br>
 
 </body>
