@@ -62,7 +62,7 @@ $cartitems = viewcart_ctr($c_id);
                                 $product_price = $oneitem['product_price'];
                                 $product_image = $oneitem['product_image'];
                                 $product_qty =  $oneitem['qty'];
-                                $itemtotal_price = $product_price * $product_qty;
+                            
 
 
 
@@ -86,6 +86,8 @@ $cartitems = viewcart_ctr($c_id);
                                         <p><strong> Name: $product_title <br></strong></p>
                                       
 						                <a href='../actions/deletefromcart.php?deletecart=$product_id' class='btn btn-primary'>Remove</a>
+						                <a href='../view/payment.php' class='btn btn-primary'>payment</a>
+
         
                                             <i class='fas fa-trash'></i>
                                         </button>
@@ -94,11 +96,64 @@ $cartitems = viewcart_ctr($c_id);
                                         </div>
                                         <div class='col-lg-4 col-md-6 mb-4 mb-lg-0'>
 
+                                        <div class='d-flex mb-4' style='max-width: 300px'>
+                                            <a href='#' class='btn btn-primary'>-</a>
                                         <!-- Quantity -->
-                                            <div>
-                                              Quantity: $product_qty 
+                                              <div>
+                                                Quantity: $product_qty
+                                              </div>
+                                                 <a href='../actions/manage_qty_cart.php?inc=$product_id' class='btn btn-primary'>+</a>
                                             </div>
+                                        <!-- Quantity -->
         
+                                        <!-- Price -->
+                                        <div>
+                                           Price:  GHS $product_price
+                                        </div>
+                                        <!-- Price -->
+                                    </div>
+                                    </div>
+                                    <!-- Single item -->
+                                    <hr class='my-4'/> ";
+                                }
+                                else {
+                                    echo " 
+                                    <div class='row'>
+                                    <div class='col-lg-3 col-md-12 mb-4 mb-lg-0'>
+                                    <!-- Image -->
+                                    <div class='bg-image hover-overlay hover-zoom ripple rounded'
+                                    data-mdb-ripple-color='light'>
+                                    <img src=' ../images/$product_image' class='card-img-top' style='height: 200px ; ' >
+                                        <div class='mask' style='background-color: rgba(251, 251, 251, 0.2)'></div>
+                                    </a>
+                                    </div>
+                                    <!-- Image -->
+                                    </div>
+                                        
+                                    <div class='col-lg-5 col-md-6 mb-4 mb-lg-0'>
+
+                                        <!-- Data -->
+                                        <p><strong> Name: $product_title <br></strong></p>
+                                      
+						                <a href='../actions/deletefromcart.php?deletecart=$product_id' class='btn btn-primary'>Remove</a>
+						                <a href='../view/payment.php' class='btn btn-primary'>payment</a>
+        
+                                            <i class='fas fa-trash'></i>
+                                        </button>
+                    
+                                        <!-- Data -->
+                                        </div>
+                                        <div class='col-lg-4 col-md-6 mb-4 mb-lg-0'>
+
+                                        <div class='d-flex mb-4' style='max-width: 300px'>
+                                            <a href='../actions/deleteqty_cart.php?dec=$product_id' class='btn btn-primary'>-</a>
+                                            
+                                        <!-- Quantity -->
+                                              <div>
+                                                Quantity: $product_qty
+                                              </div>
+                                                 <a href='../actions/manage_qty_cart.php?inc=$product_id' class='btn btn-primary'>+</a>
+                                            </div>
                                         <!-- Quantity -->
         
                                         <!-- Price -->
@@ -110,7 +165,16 @@ $cartitems = viewcart_ctr($c_id);
                                     </div>
                                     <!-- Single item -->
                                     <hr class='my-4' /> ";
-                                }
+
+
+
+
+
+                            }
+
+
+
+
                             }
 
                             ?>

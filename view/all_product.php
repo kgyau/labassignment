@@ -59,7 +59,7 @@ require('../controllers/product_controller.php');
                     <td>$pprice</td>
                     <td>$pdesc</td>
                     <td>$pkey</td>
-                    <td>$product_image</td>
+                    <td><img src=' ../images/$product_image' class='card-img-top' style='width: 50px; height: 50px ; ' ></td>
                     <td><a href='../actions/add_to_cart.php?product_id={$aproduct['product_id']}' class='btn btn-primary'>Add to Cart</a></td>
                     <td><a href='../view/single_product.php?product_id={$aproduct['product_id']}' class= 'btn btn-primary'>View</a></td>
                     <td><a href='../view/update_product.php?product_id={$aproduct['product_id']}' class= 'btn btn-primary'>Update</a></td>";

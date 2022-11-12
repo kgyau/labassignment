@@ -1,6 +1,6 @@
 <?php
-include ("../settings/core.php");
-require("../controllers/cart_controller.php");
+  include("../settings/core.php");
+  require("../controllers/cart_controller.php");
 
  
  //for increase quantity in cart
@@ -18,19 +18,23 @@ require("../controllers/cart_controller.php");
     }
  }
 
+
+
  //for decrease quantity in cart
  if (isset($_GET['dec'])) {
-    $p_id= $_GET['dec'];
-    $c_id= get_id();
-    $qty=select_onefromcart_ctr($p_id,$c_id);
-    $q1= $qty['qty'];
-    $check= dec_itemcart_ctr($p_id,$c_id,$q1);
-    if ($check) {
-        header("location:../view/cart.php");
-        
-    } else {
-      echo "decrease qty failure";
-    }
- }
+  $p_id= $_GET['dec'];
+  $c_id= get_id();
+  $qty=select_onefromcart_ctr($p_id,$c_id);
+  $q1= $qty['qty'];
+  $check= dec_itemcart_ctr($p_id,$c_id,$q1);
+  if ($check) {
+      header("location:../view/cart.php");
+      
+  } else {
+    echo "decrease qty failure";
+  }
+}
+
+
 
 ?>

@@ -1,6 +1,15 @@
 <?php
 include("../classes/cart_class.php");
 
+    //sanitize data
+    function cleanText($data){
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+
 
     function addtocart_ctr($p_id,$ip_add,$c_id,$qty){
         //create an instance of the class means that in this fucntion now i can run all the cls methods in the contact_class file
@@ -14,10 +23,10 @@ include("../classes/cart_class.php");
         $view= new Cart();
         return $view->viewcart_cls($c_id);
     }
-    function cartqty_ctr(){
-        $qty= new Cart();
-        return $qty->cartqty_cls();
-    }
+    // function cartqty_ctr(){
+    //     $qty= new Cart();
+    //     return $qty->cartqty_cls();
+    // }
 
     function removefromcart_ctr($p_id,$c_id){
         $remove= new Cart();
@@ -45,10 +54,58 @@ include("../classes/cart_class.php");
 
     function dec_itemcart_ctr($p_id,$c_id,$qty){
         $dec= new Cart();
-        return $dec->inc_itemcart_cls($p_id,$c_id,$qty);
+        return $dec->dec_itemcart_cls($p_id,$c_id,$qty);
 
     }
 
+    function select_total_qty_from_cart_ctr($c_id){
+        $total= new Cart();
+        return $total->select_total_qty_from_cart_cls($c_id);
+    }
+
+    function select_one_from_cart_ctr($p_id,$c_id){
+        $oneitem= new Cart();
+        return $oneitem->select_one_from_cart_cls($p_id,$c_id);
+    }
+    function select_total_price_ctr($c_id){
+        $price= new Cart();
+        return $price->select_total_price_cls($c_id);
+  
+
+    }
+
+    function select_one_price_ctr($c_id){
+        $price= new Cart();
+        return $price->select_one_price_cls($c_id);
+  
+    }
+    
+
+    function order_ctr($customer_id,$invoice,$date,$status){
+        $order= new Cart();
+        return $order-> order_cls($customer_id,$invoice,$date,$status);
+    }
+
+    function order_details_ctr($p_id,$qty){
+        $orderdet=new Cart();
+        return $orderdet-> order_details_cls($p_id,$qty);
+    }
+
+    function payment_ctr($amt,$customer_id,$order_id,$currency,$payment_date){
+        $pay= new Cart();
+      return $pay-> payment_cls($amt,$customer_id,$order_id,$currency,$payment_date);
+    }
+
+    function email_ctr($c_id){
+        $mail=new Cart();
+        return $mail-> email_cls($c_id);
+    }
+
+
+    function order_id_ctr($invoice_no){
+        $inv= new Cart();
+        return $inv-> order_id_cls($invoice_no);
+    }
 
 
 
