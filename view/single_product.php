@@ -58,7 +58,7 @@ $cat = selectonecat_ctr($prod['product_cat']);
                 </figcaption>
          <?php
                             echo" 
-                            <div class='bottom-wrap'> <a href='../actions/add_to_cart.php?product_id={$aprod["product_id"]}' class='btn btn-primary float-right' > Add to cart </a>
+                            <div class='bottom-wrap'> <a href='../actions/add_to_cart.php?product_id={$prod["product_id"]}' class='btn btn-primary float-right' > Add to cart </a>
                           "?>
                 <div class="price-wrap"> <a href="../view/all_product.php" class="btn btn-warning float-left" > Cancel </a>
                 </div>
