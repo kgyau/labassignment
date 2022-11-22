@@ -25,8 +25,9 @@ require("../controllers/cart_controller.php");
   curl_setopt($ch,CURLOPT_POST, true);
   curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    "Authorization: Bearer sk_test_d05e5a72a8d18503d798a15197dd09d7b05befef",
+    "Authorization: Bearer    sk_test_3cad4886be207b2ea11d086f457a79e9fffa3547",
     "Cache-Control: no-cache",
+ 
   ));
    //So that curl_exec returns the contents of the cURL; rather than echoing it
   curl_setopt($ch,CURLOPT_RETURNTRANSFER, true); 
