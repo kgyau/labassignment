@@ -6,7 +6,6 @@ $c_id = get_id();
 $cartitems = viewcart_ctr($c_id);
 $email=email_ctr($c_id);
 $email= $email['customer_email'];
-
 $total= select_total_qty_from_cart_ctr($c_id);
 $total=$total[0];
 $total1=$total['SUM(qty)'];
@@ -121,7 +120,7 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
             </div>
         </div>
     </div>
-    
+    <!-- https://paybox.com.co/pay -->
 
     <script>
 
@@ -134,7 +133,7 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
     event.preventDefault();
 
     let handler = PaystackPop.setup({
-        key: 'pk_test_0ecfee73d182a155d2d4c95e059fc6ab143a5554', // Replace with your public key
+        key: '3b139d1e-d7ad-4c9d-82fa-033b949c1941', // Replace with your public key
         email: document.getElementById("email").value,
         amount: document.getElementById("amt").value * 100,
         ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you

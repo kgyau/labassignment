@@ -38,12 +38,6 @@ $cartitems = viewcart_ctr($c_id);
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
-
-
-
-
-
-
     <section class="h-100 gradient-custom">
         <div class="container py-5">
             <div class="row d-flex justify-content-center my-4">
@@ -171,10 +165,6 @@ $cartitems = viewcart_ctr($c_id);
 
 
                             }
-
-
-
-
                             }
 
                             ?>

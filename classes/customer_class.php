@@ -18,8 +18,8 @@ class CustomerClass extends db_connection{
         // 2nd way of writing insert query
         $finalpassword= password_hash($password,PASSWORD_DEFAULT);
         
-        $sql = "INSERT INTO `customer` (`customer_name`,`customer_email`,`customer_pass`,`customer_country`,`customer_city`,`customer_contact`,`customer_image`,`user_role`) 
-        VALUES ('$fullname','$email','$finalpassword','$country','$city' ,'$contactnumber','$image','$userrole')";
+        $sql = "INSERT INTO `customer` (`customer_name`,`customer_email`,`customer_pass`,`customer_country`,`customer_city`,`customer_contact`,`user_role`) 
+        VALUES ('$fullname','$email','$finalpassword','$country','$city' ,'$contactnumber','$userrole')";
 
         return $this->db_query($sql);
 
