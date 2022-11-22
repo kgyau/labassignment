@@ -13,7 +13,7 @@ require("../controllers/cart_controller.php");
      //quantity
      $qty= 1;
 
-     echo "$p_id pid,$c_id cid,$ip_add ipadd,$qty qty";
+//      echo "$p_id pid,$c_id cid,$ip_add ipadd,$qty qty";
 
     //duplicate checker
           $result= addtocart_ctr($p_id,$ip_add,$c_id,$qty);
