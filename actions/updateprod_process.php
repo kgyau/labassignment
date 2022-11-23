@@ -16,10 +16,10 @@ if(isset($_POST['Updatep'])){
   
   $prodimage =$_FILES['prodimage']['name'];
    echo $prodimage;
-   $targetdir= "../images/product/";
-   $image = $targetdir . $prodimage;
-   $file = "../images/product/" .basename($_FILES["prodimage"]["name"]);
-   move_uploaded_file($_FILES["prodimage"]["tmp_name"],$file); 
+//    $targetdir= "../images/product/";
+//    $image = $targetdir . $prodimage;
+//    $file = "../images/product/" .basename($_FILES["prodimage"]["name"]);
+//    move_uploaded_file($_FILES["prodimage"]["tmp_name"],$file); 
 
   
 //    $result= editprod_ctr($prod_id,$productcat,$productbrand,$prod_title,$productprice,$prod_desc,$prod_key,$file);
