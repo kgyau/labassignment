@@ -15,6 +15,7 @@ if(isset($_POST['Updatep'])){
 
   
   $prodimage =$_FILES['prodimage']['name'];
+   echo $prodimage;
    $targetdir= "../images/product/";
    $image = $targetdir . $prodimage;
    $file = "../images/product/" .basename($_FILES["prodimage"]["name"]);
