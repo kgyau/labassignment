@@ -12,15 +12,18 @@ if(isset($_POST['Updatep'])){
 
    // $productimage=$_POST['prodimage'];
 
-   $prodimage =$_FILES['prodimage']['name'];
+
+   
+  $prodimage =$_FILES['prodimage']['name'];
    $targetdir= "../images/product/";
    $image = $targetdir . $prodimage;
-   move_uploaded_file($_FILES["prodimage"]["tmp_name"],"../images/product/".$_FILES["prodimage"]["name"]);
-   
+   $file = '../images/product/' .basename($_FILES["prodimage"]["name"]);
+   move_uploaded_file($_FILES["prodimage"]["tmp_name"],$file); 
 
   
+  
 
-   $result= editprod_ctr($prod_id,$productcat,$productbrand,$prod_title,$productprice,$prod_desc,$prod_key,$productimage);
+   $result= editprod_ctr($prod_id,$productcat,$productbrand,$prod_title,$productprice,$prod_desc,$prod_key,$file);
 
    if($result==True){
     header("location:../view/all_product.php");
@@ -31,3 +34,4 @@ if(isset($_POST['Updatep'])){
    }
 }
 ?>
+
