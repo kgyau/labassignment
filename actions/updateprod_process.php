@@ -15,23 +15,23 @@ if(isset($_POST['Updatep'])){
 
   
   $prodimage =$_FILES['prodimage']['name'];
-   echo $prodimage;
-//    $targetdir= "../images/product/";
-//    $image = $targetdir . $prodimage;
-//    $file = "../images/product/" .basename($_FILES["prodimage"]["name"]);
-//    move_uploaded_file($_FILES["prodimage"]["tmp_name"],$file); 
+//    echo $prodimage;
+   $targetdir= "../images/product/";
+   $image = $targetdir . $prodimage;
+   $file = "../images/product/" .basename($_FILES["prodimage"]["name"]);
+   move_uploaded_file($_FILES["prodimage"]["tmp_name"],$file); 
 
   
-//    $result= editprod_ctr($prod_id,$productcat,$productbrand,$prod_title,$productprice,$prod_desc,$prod_key,$file);
-   echo $prod_id,$productcat,$productbrand,$prod_title,$productprice,$prod_desc,$prod_key,$file;
+   $result= editprod_ctr($prod_id,$productcat,$productbrand,$prod_title,$productprice,$prod_desc,$prod_key,$file);
+//    echo $prod_id,$productcat,$productbrand,$prod_title,$productprice,$prod_desc,$prod_key,$file;
 
-//    if($result==True){
-//     header("location:../view/all_product.php");
-//    }
+   if($result==True){
+    header("location:../view/all_product.php");
+   }
 
-//    else{
-//     echo "Could not update";
-//    }
+   else{
+    echo "Could not update";
+   }
 }
 ?>
 
